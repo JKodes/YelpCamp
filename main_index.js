@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 app.get('/campgrounds', async (req, res) =>{
     const campgrounds = await Campground.find({})
-    res.render('campground/index')
+    res.render('campgrounds/index')
 })
 
 app.listen(3000, () =>{
