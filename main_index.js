@@ -20,10 +20,9 @@ app.get('/', (req, res) => {
     res.render('home')
 })
 
-app.get('/makeCampground', async (req, res) =>{
-    const camp = new Campground({title: 'My Backyard', description: 'camping on a budget'})
-    await camp.save()
-    res.send(camp)
+app.get('/campgrounds', async (req, res) =>{
+    const campgrounds = await Campground.find({})
+    res.render('campground/index')
 })
 
 app.listen(3000, () =>{
