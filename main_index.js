@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const ejsMate = require('ejs-mate')
-const { campgroundSchema } = require('./schemas.js')
+const { campgroundSchema, reviewSchema } = require('./schemas.js')
 mongoose.connect('mongodb://localhost:27017/yelp-camp')
 const catchAsync = require('./utils/catchAsync')
 const ExpressError = require('./utils/ExpressError')
