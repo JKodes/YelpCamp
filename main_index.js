@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const ejsMate = require('ejs-mate')
+const session = require('express-session')
 
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp');
@@ -32,6 +33,13 @@ app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')))
 
 
+const sessionConfig = {
+    secret: 'thisshouldbeabetterasecret',
+    resave: false,
+    saveUninitialized: true,
+}
+
+app.use(session(sessionConfig))
 
 
 app.use('/campgrounds', campgrounds)
