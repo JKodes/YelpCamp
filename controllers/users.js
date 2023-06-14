@@ -17,7 +17,7 @@ module.exports.register = async (req, res, next) =>{
             res.redirect('/campgrounds')
         })
     } catch(e){
-        req.flash('error', e.meesage)
+        req.flash('error', e.message)
         res.redirect('register')
     }
     req.flash('success', 'Welcome to Yelp Camp')
@@ -36,7 +36,7 @@ module.exports.login = (req, res)=>{
     res.redirect(redirectUrl)
 }
 
-module.export.logout = (req, res, next) =>{
+module.exports.logout = (req, res, next) =>{
     req.logout(function (err) {
         if (err) {
             return next(err)
