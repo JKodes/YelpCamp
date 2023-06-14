@@ -50,10 +50,10 @@
       <% for(let review of campground.reviews) { %>
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title"><= review.author.username %></h5>
+          <h5 class="card-title"><%=review.author.username%></h5>
           <h3>Rated element name</h3>
           <p class="starability-result" data-rating="<%=review.rating%>">
-            Rated: <%= review.rating %> stars
+            Rated: <%=review.rating%> stars
         </p>
           <!--<h6 class="card-subtitle mb-2 text-body-secondary">By <= review.author.username %></h6> -->
           <p class="card-text">Review:<%= review.body %></p>
