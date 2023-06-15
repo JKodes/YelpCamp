@@ -20,9 +20,6 @@ module.exports.register = async (req, res, next) =>{
         req.flash('error', e.message)
         res.redirect('register')
     }
-    req.flash('success', 'Welcome to Yelp Camp')
-    res.redirect('/campgrounds')
-
 }
 
 module.exports.renderLogin = (req, res)=>{
