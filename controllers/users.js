@@ -17,12 +17,9 @@ module.exports.register = async (req, res, next) =>{
             res.redirect('/campgrounds')
         })
     } catch(e){
-        req.flash('error', e.meesage)
+        req.flash('error', e.message)
         res.redirect('register')
     }
-    req.flash('success', 'Welcome to Yelp Camp')
-    res.redirect('/campgrounds')
-
 }
 
 module.exports.renderLogin = (req, res)=>{
@@ -32,11 +29,12 @@ module.exports.renderLogin = (req, res)=>{
 
 module.exports.login = (req, res)=>{
     req.flash('success', 'Welcome back!')
-    const redirectUrl = res.locals.returnTo || '/campgrounds'
+    const redirectUrl = req.session.returnTo || '/campgrounds'
+    delete req.session.returnTo
     res.redirect(redirectUrl)
 }
 
-module.export.logout = (req, res, next) =>{
+module.exports.logout = (req, res, next) =>{
     req.logout(function (err) {
         if (err) {
             return next(err)
