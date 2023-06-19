@@ -29,7 +29,7 @@ module.exports.renderLogin = (req, res)=>{
 
 module.exports.login = (req, res)=>{
     req.flash('success', 'Welcome back!')
-    const redirectUrl = req.session.returnTo || '/campgrounds'
+    const redirectUrl = res.locals.returnTo || '/campgrounds'
     delete req.session.returnTo
     return res.redirect(redirectUrl)
 }
