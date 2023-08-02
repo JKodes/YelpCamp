@@ -22,7 +22,6 @@ router.route('/:id')
     .delete(isLoggedIn, isAuthor, catchAsync(campgrounds.deleteCampground))
 
 
-
 router.get('/:id/edit',  isLoggedIn, isAuthor, catchAsync(campgrounds.renderEditForm))
 
 
