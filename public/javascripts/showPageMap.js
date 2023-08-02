@@ -7,5 +7,5 @@ const map = new mapboxgl.Map({
 });
 
 new mapboxgl.Marker()
-    .setLngLat([-74.5, 40])
+    .setLngLat(campground.geometry.coordinates)
     .addTo(map);
