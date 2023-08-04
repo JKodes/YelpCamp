@@ -35,11 +35,11 @@ paint: {
 'circle-color': [
 'step',
 ['get', 'point_count'],
-'#51bbd6',
+'#311b92',
+40,
+'#82b1ff',
 100,
-'#f1f075',
-750,
-'#f28cb1'
+'#03a9f4'
 ],
 'circle-radius': [
 'step',
@@ -102,10 +102,9 @@ zoom: zoom
 // the location of the feature, with
 // description HTML from its properties.
 map.on('click', 'unclustered-point', (e) => {
+const { popUpMarkup } = e.features[0].properties
 const coordinates = e.features[0].geometry.coordinates.slice();
-const mag = e.features[0].properties.mag;
-const tsunami =
-e.features[0].properties.tsunami === 1 ? 'yes' : 'no';
+
  
 // Ensure that if the map is zoomed out such that
 // multiple copies of the feature are visible, the
@@ -116,9 +115,7 @@ coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
  
 new mapboxgl.Popup()
 .setLngLat(coordinates)
-.setHTML(
-`magnitude: ${mag}<br>Was there a tsunami?: ${tsunami}`
-)
+.setHTML(popUpMarkup)
 .addTo(map);
 });
  
