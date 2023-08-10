@@ -46,6 +46,7 @@ app.use(mongoSanitize())
 
 
 const sessionConfig = {
+    name: 'usess',
     secret: 'thisshouldbeabetterasecret',
     resave: false,
     saveUninitialized: true,
