@@ -69,13 +69,15 @@ const scriptSrcUrls = [
     "https://cdnjs.cloudflare.com/",
     "https://cdn.jsdelivr.net",
 ];
+//This is the array that needs added to
 const styleSrcUrls = [
-    "https://kit-free.fontawesome.com/",
     "https://stackpath.bootstrapcdn.com/",
+    "https://kit-free.fontawesome.com/",
     "https://api.mapbox.com/",
     "https://api.tiles.mapbox.com/",
     "https://fonts.googleapis.com/",
     "https://use.fontawesome.com/",
+    "https://cdn.jsdelivr.net",
 ];
 const connectSrcUrls = [
     "https://api.mapbox.com/",
@@ -97,7 +99,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "http://res.cloudinary.com/djtxbpcr3",  
+                "https://res.cloudinary.com/djtxbpcr3/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
                 "https://images.unsplash.com/",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
